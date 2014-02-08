@@ -104,7 +104,7 @@ class List(models.Model):
     name = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    main_url = models.URLField(verify_exists=False)
+    main_url = models.URLField(max_length=255, null=True, blank=True)
     encoding = models.CharField(max_length=20, choices=LANGUAGES)
 
     class Meta:
